@@ -8,14 +8,14 @@
 
 At the root of this repository:
 ```
-docker build -t cheftony/esrally:1.0.2 .
-docker push cheftony/esrally:1.0.2
+docker build -t cheftony/esrally:1.0.2-1 .
+docker push cheftony/esrally:1.0.2-1
 ```
 
 1. Run esrally container in kubernetes:
 
 ```
-kubectl run -it --generator "run-pod/v1" esrally --image cheftony/esrally:1.0.2 -- /bin/sh
+kubectl run -it --generator "run-pod/v1" esrally --image cheftony/esrally:1.0.2-1 -- /bin/sh
 ```
 
 TLS Support
@@ -26,6 +26,7 @@ TLS Support
 1. start benchmark agains es-cluster (from the attached terminal)
 
 ```
+esrally configure
 esrally list tracks
 esrally --pipeline=benchmark-only --target-hosts=es-elasticsearch:9200
 ```
