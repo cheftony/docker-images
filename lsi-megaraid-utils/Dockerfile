@@ -10,6 +10,8 @@ COPY --from=builder /opt /opt
 RUN yum -y install \
   dmidecode \
   smartmontools \
+  pciutils \
+  glibc.i686 \
   && yum clean all \
   && rm -rf /var/cache/yum \
   && /usr/sbin/update-smart-drivedb \
