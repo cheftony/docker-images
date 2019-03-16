@@ -12,6 +12,7 @@ RUN yum -y install \
   smartmontools \
   pciutils \
   glibc.i686 \
+  unzip \
   && yum clean all \
   && rm -rf /var/cache/yum \
   && /usr/sbin/update-smart-drivedb \
